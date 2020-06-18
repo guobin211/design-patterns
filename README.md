@@ -10,6 +10,11 @@ Install [Deno][https://deno.land/]
     // start
     deno run {fileName}
 ```
+#### 类图
+[![Class Car](https://github.com/guobin211/design-patterns/blob/master/_static/Car.png)](https://github.com/guobin211/design-patterns)
+
+#### 时序图
+[![Class Car](https://github.com/guobin211/design-patterns/blob/master/_static/UserCenter.png)](https://github.com/guobin211/design-patterns)
 
 ## 程序 = 数据结构 + 算法
 

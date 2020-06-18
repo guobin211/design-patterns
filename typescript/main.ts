@@ -1,6 +1,11 @@
-function testStart(params: string) {
-  console.log(params)
-
+interface IMainAction {
+  run: (...args: string[]) => void;
 }
 
-testStart("hello")
+class Main implements IMainAction {
+  run(...args: string[]): void {
+    console.log(args);
+  }
+}
+const mainTask = new Main();
+mainTask.run("Hello Deno");
