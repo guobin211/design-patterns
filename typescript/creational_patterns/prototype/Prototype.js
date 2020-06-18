@@ -16,5 +16,5 @@ Array.prototype.swap = function (l, r) {
 };
 
 const arr = [1, 2, 3, 4];
-arr.swap(2,3);
+arr.swap(2, 3);
 console.log(arr);
