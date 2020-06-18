@@ -1,0 +1,8 @@
+@startuml
+
+客户端 -> 服务端: send SYN=1
+服务端 -> 客户端: send SYN=1, ack=X+1, seq = y
+客户端 -> 服务端: send SYN=1, ack=y+1, seq=x+1
+服务端 -> 客户端: 数据传输
+
+@enduml
