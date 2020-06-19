@@ -40,6 +40,10 @@ export class Director {
     return this._builder;
   }
 
+  constructor() {
+    this._builder = new BuildPattern();
+  }
+
   getProductBuilder() {
     return this._builder;
   }
