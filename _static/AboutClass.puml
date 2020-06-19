@@ -1,0 +1,17 @@
+@startuml
+
+interface Car
+abstract class SmallCar
+abstract class HeaveCar
+class Engine
+class AudiA6
+class Person
+
+Car -- Person: < owns
+Car <|-- SmallCar: 泛化
+Car <|-- HeaveCar: 泛化
+Car <-- Engine: 关联
+AudiA6 <|.. SmallCar: 实现
+Engine <.. AudiA6: 依赖
+
+@enduml
