@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    .center{
+      display: flex;
+      vertical-align: center;
+      width: 100%;
+      height: 100vh;
+    }
+    .flex-form {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 300px;
+      margin: 0 auto;
+    }
+    .flex-form input {
+      border-top: 0;
+      border-left: 0;
+      border-right: 0;
+    }
+    input{
+      background:none;
+      outline:none;
+    }
+    input:focus{
+      border:none;
+    }
+    .form-item {
+      height: 30px;
+      width: 300px;
+      margin: 10px 0;
+    }
+  </style>
+</head>
+<body>
+<div class="center">
+  <form class="flex-form" enctype="multipart/form-data">
+    <label for="username">
+      <input class="form-item" id="username" type="text" placeholder="Enter Username">
+    </label>
+    <label for="out">
+      <input class="form-item" id="out" type="text" placeholder="" disabled>
+    </label>
+    <button class="form-item" type="button">随机数</button>
+  </form>
+</div>
+<script src="index.js"></script>
+</body>
+</html>
