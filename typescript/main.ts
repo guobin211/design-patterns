@@ -8,4 +8,7 @@ class Main implements IMainAction {
   }
 }
 const mainTask = new Main();
-mainTask.run("Hello Deno");
+let name = "Hello";
+mainTask.run(name);
+name = "jack";
+mainTask.run(name);

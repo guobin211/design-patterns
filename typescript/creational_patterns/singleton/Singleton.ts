@@ -35,6 +35,10 @@ export class Singleton {
     return this._instance;
   }
 
+  constructor() {
+    this._instance = new ProductA();
+  }
+
   getInstance(): ProductA {
     if (!this._instance) {
       this._instance = new ProductA();
