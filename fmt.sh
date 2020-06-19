@@ -1,3 +1,3 @@
 #!/bin/bash
 
-deno fmt
+deno fmt --check
