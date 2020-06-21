@@ -6,31 +6,31 @@
  */
 (function () {
   const form = {
-    username: ''
-  }
+    username: "",
+  };
   function initListener() {
     let _value = form.username;
     const input = document.getElementById("username");
     const out = document.getElementById("out");
     const btn = document.getElementsByTagName("button")[0];
 
-    Object.defineProperty(form, 'username', {
+    Object.defineProperty(form, "username", {
       get() {
         return _value;
       },
       set(v) {
         _value = v;
         notify();
-      }
-    })
+      },
+    });
 
-    btn.addEventListener('click', function (e) {
+    btn.addEventListener("click", function (e) {
       form.username = Math.random() * 100;
     }, true);
 
     input.oninput = function (val) {
       form.username = val.target.value;
-    }
+    };
 
     function notify() {
       input.value = form.username;
