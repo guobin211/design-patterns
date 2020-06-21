@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "ES6",
+    "sourceMap": true,
+    "lib": ["ES2020", "ES2019", "ES2017", "ES2018", "ES2016", "ES2015"],
+    "outDir": "dist"
+  },
+  "include": [
+    "array"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}
