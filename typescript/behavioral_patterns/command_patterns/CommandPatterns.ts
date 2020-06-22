@@ -5,8 +5,17 @@
  * @Project design-patterns
  */
 enum CommandEnum {
+  /**
+   * 启动命令
+   */
   Start,
+  /**
+   * 停止命令
+   */
   Stop,
+  /**
+   * 重载命令
+   */
   Reload,
 }
 

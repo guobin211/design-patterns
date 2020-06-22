@@ -5,7 +5,16 @@
  * @Project design-patterns
  */
 abstract class BaseMediator {
+  /**
+   * 注册中间人
+   * @param c
+   */
   abstract register(c: BaseClient): void;
+
+  /**
+   * 发布消息
+   * @param s
+   */
   abstract publish(s: string): void;
 }
 
