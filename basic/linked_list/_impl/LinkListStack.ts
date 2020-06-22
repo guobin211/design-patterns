@@ -7,7 +7,7 @@
 import { SimpleLinkList } from "./SimpleLinkList.ts";
 import { IStack } from "../../stack/_base/IStack.ts";
 
-export class LinkListStack<E> implements IStack<E>{
+export class LinkListStack<E> implements IStack<E> {
   private list: SimpleLinkList<E>;
 
   get size() {

@@ -7,12 +7,12 @@
 import { SimpleLinkList } from "../_impl/SimpleLinkList.ts";
 
 const linkList = new SimpleLinkList<number>();
-for (let i = 0; i < 5 ; i++) {
+for (let i = 0; i < 5; i++) {
   linkList.addFirst(i);
   console.log(linkList.toString());
 }
-for (let i = 0; i < 5 ; i++) {
-  linkList.set(i , i);
+for (let i = 0; i < 5; i++) {
+  linkList.set(i, i);
 }
 console.log(linkList.toString());
 

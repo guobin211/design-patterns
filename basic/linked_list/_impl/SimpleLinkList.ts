@@ -124,5 +124,4 @@ export class SimpleLinkList<E> {
     res += "]: end";
     return res;
   }
-
 }

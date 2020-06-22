@@ -4,9 +4,9 @@
  * @Author GuoBin<guobin201314@gmail.com>
  * @Project design-patterns
  */
-import { IQueue } from "../_base/IQueue.ts"
-import { ArrayQueue } from "../_impl/ArrayQueue.ts"
-import { LoopQueue } from "../_impl/LoopQueue.ts"
+import { IQueue } from "../_base/IQueue.ts";
+import { ArrayQueue } from "../_impl/ArrayQueue.ts";
+import { LoopQueue } from "../_impl/LoopQueue.ts";
 import { LinkListQueue } from "../../linked_list/_impl/LinkListQueue.ts";
 
 export function testQueue(q: IQueue<number>, count: number, key: string) {

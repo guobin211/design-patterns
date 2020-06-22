@@ -39,9 +39,9 @@ export class ArrayQueue<E> implements IQueue<E> {
   toString(): string {
     let res = "ArrayQueue: front: [";
     for (let i = 0; i < this.size; i++) {
-      res += this.data[i] + "->"
+      res += this.data[i] + "->";
     }
-    res+="] end"
-    return  res;
+    res += "] end";
+    return res;
   }
 }

@@ -4,7 +4,7 @@
  * @Author GuoBin<guobin201314@gmail.com>
  * @Project design-patterns
  */
-export class SimpleNode<E>{
+export class SimpleNode<E> {
   public element: E | undefined;
   public next: SimpleNode<E> | undefined;
 

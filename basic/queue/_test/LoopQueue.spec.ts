@@ -4,7 +4,7 @@
 * @Author GuoBin<guobin201314@gmail.com>
 * @Project design-patterns
 */
-import { LoopQueue } from "../_impl/LoopQueue.ts"
+import { LoopQueue } from "../_impl/LoopQueue.ts";
 
 const loopQueue = new LoopQueue<number>();
 function testQueue() {

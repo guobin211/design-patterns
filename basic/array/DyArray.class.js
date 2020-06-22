@@ -27,7 +27,7 @@ DyArray.prototype.push = function (e) {
   return this;
 };
 
-DyArray.prototype[Symbol.iterator] = function *() {
+DyArray.prototype[Symbol.iterator] = function* () {
   let index = 0;
   const that = this;
   return {
@@ -35,13 +35,13 @@ DyArray.prototype[Symbol.iterator] = function *() {
       let nextIndex = index;
       index++;
       if (nextIndex < that.data.lenth) {
-        return {value: that.data[nextIndex], done: false};
+        return { value: that.data[nextIndex], done: false };
       } else {
-        return {value: that.data[nextIndex], done: true};
+        return { value: that.data[nextIndex], done: true };
       }
-    }
-  }
-}
+    },
+  };
+};
 
 const arr = new DyArray();
 arr.push(1).push(2).push(3);

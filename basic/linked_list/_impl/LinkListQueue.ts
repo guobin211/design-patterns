@@ -20,22 +20,22 @@ class Node<E> {
   }
 }
 
-export class LinkListQueue<E> implements IQueue<E>{
+export class LinkListQueue<E> implements IQueue<E> {
   private head: Node<E> | undefined = new Node<E>();
   private end: Node<E> | undefined;
   private _size: number = 0;
 
   get isEmpty() {
     return this.size === 0;
-  };
+  }
 
   get size() {
     return this._size;
-  };
+  }
 
   dequeue(): E | undefined {
     if (this.isEmpty) {
-      return
+      return;
     }
     const resNode = this.head;
     this.head = this.head!.next;
@@ -59,7 +59,7 @@ export class LinkListQueue<E> implements IQueue<E>{
 
   getFront(): E | undefined {
     if (this.isEmpty) {
-      return
+      return;
     }
     return this.head?.e;
   }
@@ -67,12 +67,11 @@ export class LinkListQueue<E> implements IQueue<E>{
   toString() {
     let res = "LinkListQueue: front: [ ";
     let curr = this.head;
-    for (let i = 0; i < this.size ; i++) {
+    for (let i = 0; i < this.size; i++) {
       res += curr?.e + "->";
       curr = curr?.next;
     }
-    res += "] end"
+    res += "] end";
     return res;
   }
-
 }
