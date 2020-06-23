@@ -3,6 +3,7 @@
  * @Date 2020-06-21
  * @Author GuoBin<guobin201314@gmail.com>
  * @Project design-patterns
+ * 带尾结点的链表队列
  */
 import { IQueue } from "../../queue/_base/IQueue.ts";
 
@@ -21,57 +22,57 @@ class Node<E> {
 }
 
 export class LinkListQueue<E> implements IQueue<E> {
-  private head: Node<E> | undefined = new Node<E>();
-  private end: Node<E> | undefined;
-  private _size: number = 0;
+   #head: Node<E> | undefined = new Node<E>();
+   #end: Node<E> | undefined;
+   #size: number = 0;
 
   get isEmpty() {
     return this.size === 0;
   }
 
   get size() {
-    return this._size;
+    return this.#size;
   }
 
   dequeue(): E | undefined {
     if (this.isEmpty) {
       return;
     }
-    const resNode = this.head;
-    this.head = this.head!.next;
-    if (this.head) {
-      this.end = undefined;
+    const resNode = this.#head;
+    this.#head = this.#head!.next;
+    if (this.#head) {
+      this.#end = undefined;
     }
-    this._size--;
+    this.#size--;
     return resNode?.e;
   }
 
   enqueue(e: E): void {
-    if (this.end === undefined) {
-      this.end = new Node<E>(e);
-      this.head = this.end;
+    if (this.#end === undefined) {
+      this.#end = new Node<E>(e);
+      this.#head = this.#end;
     } else {
-      this.end!.next = new Node<E>(e);
-      this.end = this.end.next;
+      this.#end!.next = new Node<E>(e);
+      this.#end = this.#end.next;
     }
-    this._size++;
+    this.#size++;
   }
 
   getFront(): E | undefined {
     if (this.isEmpty) {
       return;
     }
-    return this.head?.e;
+    return this.#head?.e;
   }
 
   toString() {
     let res = "LinkListQueue: front: [ ";
-    let curr = this.head;
+    let curr = this.#head;
     for (let i = 0; i < this.size; i++) {
       res += curr?.e + "->";
       curr = curr?.next;
     }
-    res += "] end";
+    res += "] #end";
     return res;
   }
 }

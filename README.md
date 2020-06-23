@@ -9,12 +9,23 @@ Install [Deno][https://deno.land/]
 ```bash
     // start
     deno run {fileName}
+
+    class Node {
+        // 私有属性以 `$` 开头
+        private $size: number = 0;
+        get size() {
+            return this.$size;
+        }
+    }
 ```
 #### 类图
-[![Class Car](https://github.com/guobin211/design-patterns/blob/master/_static/Car.png)](https://github.com/guobin211/design-patterns)
+[![Design](https://github.com/guobin211/design-patterns/blob/master/_static/Car.png)](https://github.com/guobin211/design-patterns)
 
 #### 时序图
-[![Class Car](https://github.com/guobin211/design-patterns/blob/master/_static/UserCenter.png)](https://github.com/guobin211/design-patterns)
+[![Design](https://github.com/guobin211/design-patterns/blob/master/_static/UserCenter.png)](https://github.com/guobin211/design-patterns)
+
+#### 树结构
+[![Design](https://github.com/guobin211/design-patterns/blob/master/_static/bst_tree.png)](https://github.com/guobin211/design-patterns)
 
 ## 程序 = 数据结构 + 算法
 

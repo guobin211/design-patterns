@@ -7,19 +7,19 @@
 import { SimpleNode } from "./SimpleNode.ts";
 
 export class SimpleLinkList<E> {
-  dummyHead: SimpleNode<E>;
-  private _size: number;
+  #dummyHead: SimpleNode<E>;
+  #size: number;
   get size() {
-    return this._size;
+    return this.#size;
   }
 
   get isEmpty() {
-    return this._size === 0;
+    return this.#size === 0;
   }
 
   constructor() {
-    this._size = 0;
-    this.dummyHead = new SimpleNode();
+    this.#size = 0;
+    this.#dummyHead = new SimpleNode();
   }
 
   /**
@@ -31,12 +31,12 @@ export class SimpleLinkList<E> {
     if (index < 0 || index > this.size) {
       throw new Error("Add failed. Illegal index.");
     }
-    let prev = this.dummyHead;
+    let prev = this.#dummyHead;
     for (let i = 0; i < index; i++) {
       prev = prev.next!;
     }
     prev!.next = new SimpleNode(e, prev.next);
-    this._size++;
+    this.#size++;
   }
 
   addFirst(e: E) {
@@ -51,7 +51,7 @@ export class SimpleLinkList<E> {
     if (index < 0 || index >= this.size) {
       throw new Error("Add failed. Illegal index.");
     }
-    let current = this.dummyHead.next;
+    let current = this.#dummyHead.next;
     for (let i = 0; i < index; i++) {
       current = current?.next;
     }
@@ -70,7 +70,7 @@ export class SimpleLinkList<E> {
     if (index < 0 || index >= this.size) {
       throw new Error("Add failed. Illegal index.");
     }
-    let current = this.dummyHead.next;
+    let current = this.#dummyHead.next;
     for (let i = 0; i < index; i++) {
       current = current?.next;
     }
@@ -78,7 +78,7 @@ export class SimpleLinkList<E> {
   }
 
   includes(e: E): boolean {
-    let current = this.dummyHead.next;
+    let current = this.#dummyHead.next;
     while (current) {
       if (current.element === e) {
         return true;
@@ -96,13 +96,13 @@ export class SimpleLinkList<E> {
     if (index < 0 || index >= this.size) {
       throw new Error("Add failed. Illegal index.");
     }
-    let prev: SimpleNode<E> = this.dummyHead;
+    let prev: SimpleNode<E> = this.#dummyHead;
     for (let i = 0; i < index; i++) {
       prev = prev.next!;
     }
     const resNode: SimpleNode<E> = prev.next!;
     prev.next = resNode.next;
-    this._size--;
+    this.#size--;
     return resNode.element;
   }
 
@@ -116,7 +116,7 @@ export class SimpleLinkList<E> {
 
   toString() {
     let res = "start: [";
-    let curr = this.dummyHead.next;
+    let curr = this.#dummyHead.next;
     while (curr) {
       res += curr.toString() + "->";
       curr = curr.next;

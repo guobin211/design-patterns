@@ -5,25 +5,25 @@
  * @Project design-patterns
  */
 class DynamicArray<E> {
-  private _length: number;
-  private data: Map<number, E>;
+   #length: number;
+   #data: Map<number, E>;
 
   get length() {
-    return this._length;
+    return this.#length;
   }
 
   get(index: number) {
-    return this.data.get(index);
+    return this.#data.get(index);
   }
 
   set(index: number, e: E) {
-    this.checkIndex(index);
-    this.data.set(index, e);
+    this.$checkIndex(index);
+    this.#data.set(index, e);
   }
 
   constructor(private capacity: number = 100) {
-    this._length = 0;
-    this.data = new Map();
+    this.#length = 0;
+    this.#data = new Map();
   }
 
   /**
@@ -32,12 +32,12 @@ class DynamicArray<E> {
    * @param e
    */
   insert(index: number, e: E) {
-    this.checkIndex(index);
+    this.$checkIndex(index);
     for (let i = this.length - 1; i >= this.length; i--) {
-      this.data.set(i + 1, this.data.get(i)!);
+      this.#data.set(i + 1, this.#data.get(i)!);
     }
-    this.data.set(index, e);
-    this._length++;
+    this.#data.set(index, e);
+    this.#length++;
   }
 
   push(e: E) {
@@ -52,21 +52,21 @@ class DynamicArray<E> {
    * 移除元素
    * @param index
    */
-  remove(index: number): E {
-    this.checkIndex(index);
-    const res = this.data.get(index);
+  remove(index: number): E | undefined {
+    this.$checkIndex(index);
+    const res = this.#data.get(index);
     for (let i = index + 1; i < this.length; i++) {
-      this.data.set(i - 1, this.data.get(i)!);
+      this.#data.set(i - 1, this.#data.get(i)!);
     }
-    this._length--;
+    this.#length--;
     if (this.length < this.capacity / 2 && this.length > 200) {
       // 清理Map
       for (let i = this.capacity; i > this.length; i++) {
-        this.data.delete(i);
+        this.#data.delete(i);
       }
       this.resize(this.capacity / 2);
     }
-    return res as E;
+    return res;
   }
 
   shift() {
@@ -83,7 +83,7 @@ class DynamicArray<E> {
    */
   indexOf(e: any): number {
     for (let i = 0; i < this.length; i++) {
-      if (this.data.get(i) === e) {
+      if (this.#data.get(i) === e) {
         return i;
       }
     }
@@ -97,12 +97,12 @@ class DynamicArray<E> {
    */
   slice(start: number, end: number = this.length): E[] {
     const res: E[] = [];
-    this.checkIndex(start);
+    this.$checkIndex(start);
     if (end > this.length) {
       end = this.length;
     }
     for (let i = start; i < end; i++) {
-      res.push(this.data.get(i)!);
+      res.push(this.#data.get(i)!);
     }
     return res;
   }
@@ -115,7 +115,7 @@ class DynamicArray<E> {
    * Return 数组现在的长度
    */
   splice(index: number, deleteCount: number = 0, ...arr: E[]): number {
-    this.checkIndex(index);
+    this.$checkIndex(index);
     const endSize = this.length - deleteCount + arr.length;
     const offset = deleteCount - arr.length;
     if (offset > 0) {
@@ -123,20 +123,20 @@ class DynamicArray<E> {
       for (let i = index; i < endSize; i++) {
         const el = arr.shift();
         if (el) {
-          this.data.set(i, el);
+          this.#data.set(i, el);
         } else {
-          this.data.set(i, this.data.get(i + offset)!);
+          this.#data.set(i, this.#data.get(i + offset)!);
         }
       }
     } else {
       // 增加
       for (let i = endSize; i >= index; i--) {
         if (i >= index + arr.length) {
-          this.data.set(i, this.data.get(i + offset)!);
+          this.#data.set(i, this.#data.get(i + offset)!);
         } else {
           const el = arr.pop();
           if (el) {
-            this.data.set(i, el);
+            this.#data.set(i, el);
           }
         }
       }
@@ -144,17 +144,17 @@ class DynamicArray<E> {
 
     if (this.length < endSize) {
       for (let i = endSize; i > this.length; i--) {
-        this.data.delete(i);
+        this.#data.delete(i);
       }
     }
-    this._length = endSize;
+    this.#length = endSize;
     return endSize;
   }
 
   toString() {
     let res = "[ ";
     for (let i = 0; i < this.length; i++) {
-      res += `${this.data.get(i)}`;
+      res += `${this.#data.get(i)}`;
       if (i !== this.length - 1) {
         res += ", ";
       }
@@ -174,15 +174,15 @@ class DynamicArray<E> {
         let nextIndex = index;
         index++;
         if (index <= that.length) {
-          return { value: that.data.get(nextIndex), done: false };
+          return { value: that.#data.get(nextIndex), done: false };
         } else {
-          return { value: that.data.get(nextIndex), done: true };
+          return { value: that.#data.get(nextIndex), done: true };
         }
       },
     };
   }
 
-  private checkIndex(index: number) {
+  private $checkIndex(index: number) {
     if (this.length === this.capacity) {
       this.resize(this.length * 2);
     }
