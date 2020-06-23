@@ -8,7 +8,7 @@ import { BST } from "../_impl/BST.ts";
 
 {
   const bst = new BST(3);
-  const arr = [1,2,4,5];
+  const arr = [1, 2, 4, 5];
   for (const n of arr) {
     bst.add(n);
   }
@@ -33,5 +33,4 @@ import { BST } from "../_impl/BST.ts";
   }
   console.log(arr1.length);
   console.log(arr1[0], arr1[arr1.length - 1]);
-
 }

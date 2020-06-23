@@ -71,7 +71,9 @@ export class LoopQueue<E> implements IQueue<E> {
     let res = "";
     res +=
       `LoopQueue: size = ${this.size}, capacity = ${this.capacity}, #front [`;
-    for (let i = this.#front; i !== this.#tail; i = (i + 1) % this.#data.length) {
+    for (
+      let i = this.#front; i !== this.#tail; i = (i + 1) % this.#data.length
+    ) {
       res += this.#data[i];
       if ((i + 1) % this.#data.length !== this.#tail) {
         res += ", ";

@@ -190,7 +190,7 @@ export class BST<E> implements IBST<E> {
 
   minElement(): E {
     if (this.#root === null) {
-      throw new RangeError("BST<E> is Empty")
+      throw new RangeError("BST<E> is Empty");
     } else {
       return this.$minElement(this.#root).e;
     }
@@ -206,7 +206,7 @@ export class BST<E> implements IBST<E> {
 
   maxElement(): E {
     if (this.#root === null) {
-      throw new RangeError("BST<E> is Empty")
+      throw new RangeError("BST<E> is Empty");
     } else {
       return this.$maxElement(this.#root).e;
     }
@@ -222,7 +222,7 @@ export class BST<E> implements IBST<E> {
 
   removeMin(): E {
     if (this.#root === null) {
-      throw new RangeError("BST<E> is Empty")
+      throw new RangeError("BST<E> is Empty");
     } else {
       const res = this.minElement();
       this.#root = this.$removeMin(this.#root);
@@ -248,7 +248,7 @@ export class BST<E> implements IBST<E> {
 
   removeMax(): E {
     if (this.#root === null) {
-      throw new RangeError("BST<E> is Empty")
+      throw new RangeError("BST<E> is Empty");
     } else {
       const res = this.maxElement();
       this.#root = this.$removeMax(this.#root);
@@ -256,7 +256,7 @@ export class BST<E> implements IBST<E> {
     }
   }
 
-  private $removeMax(node: NodeOrNull<E>):  NodeOrNull<E> {
+  private $removeMax(node: NodeOrNull<E>): NodeOrNull<E> {
     if (node === null) {
       return node;
     } else {

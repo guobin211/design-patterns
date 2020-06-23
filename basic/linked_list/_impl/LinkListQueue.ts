@@ -22,9 +22,9 @@ class Node<E> {
 }
 
 export class LinkListQueue<E> implements IQueue<E> {
-   #head: Node<E> | undefined = new Node<E>();
-   #end: Node<E> | undefined;
-   #size: number = 0;
+  #head: Node<E> | undefined = new Node<E>();
+  #end: Node<E> | undefined;
+  #size: number = 0;
 
   get isEmpty() {
     return this.size === 0;

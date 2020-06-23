@@ -5,8 +5,8 @@
  * @Project design-patterns
  */
 class DynamicArray<E> {
-   #length: number;
-   #data: Map<number, E>;
+  #length: number;
+  #data: Map<number, E>;
 
   get length() {
     return this.#length;
