@@ -11,11 +11,13 @@ Install [Deno][https://deno.land/]
     deno run {fileName}
 
     class Node {
-        // 私有属性以 `$` 开头
-        private $size: number = 0;
+        // 私有属性以 `#` 开头
+        #size: number = 0;
         get size() {
             return this.$size;
         }
+        // 私有方法以 `$` 开头
+        private $getCode() {}
     }
 ```
 #### 类图
@@ -30,7 +32,30 @@ Install [Deno][https://deno.land/]
 ## 程序 = 数据结构 + 算法
 
 数据之间的关系
-数据变化的时间顺序
+数据变化的时间复杂度分析
+已实现的数据结构
+
+```shell script
+    
+    Array
+    HashTable
+    MaxHeap
+    SimpleLinkList
+    LinkedListStack
+    LinkedListQueue
+    BSTMap
+    LinkedListMap
+    ArrayQueue
+    LoopQueue
+    BSTSet
+    QuickUnion
+    UnionFind
+    ArrayStack
+    BST
+    SegmentTree
+    Trie
+
+```
 
 ## 创建型模式
 
