@@ -74,5 +74,4 @@ export class Trie {
     }
     return true;
   }
-
 }

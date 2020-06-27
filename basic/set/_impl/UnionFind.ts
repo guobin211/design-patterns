@@ -4,16 +4,16 @@
  */
 import { IUF } from "../_base/IUF.ts";
 
-export class UnionFind implements IUF{
+export class UnionFind implements IUF {
   readonly #ids: number[];
 
   get size() {
     return this.#ids.length;
-  };
+  }
 
   constructor(size: number) {
     this.#ids = new Array(size);
-    for (let i = 0; i <size ; i++) {
+    for (let i = 0; i < size; i++) {
       this.#ids[i] = i;
     }
   }

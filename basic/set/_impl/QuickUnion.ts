@@ -4,7 +4,7 @@
  */
 import { IUF } from "../_base/IUF.ts";
 
-export class QuickUnion implements IUF{
+export class QuickUnion implements IUF {
   readonly #parent: number[];
   get size() {
     return this.#parent.length;
@@ -21,7 +21,7 @@ export class QuickUnion implements IUF{
       throw new RangeError("p must >= 0 and < size");
     }
     while (p !== this.#parent[p]) {
-      p = this.#parent[p]
+      p = this.#parent[p];
     }
     return p;
   }

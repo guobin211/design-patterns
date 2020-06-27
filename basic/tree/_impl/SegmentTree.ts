@@ -62,7 +62,10 @@ export class SegmentTree<E> {
     const mid = getMid(l, r);
     this.$buildSegmentTree(leftTreeIndex, l, mid);
     this.$buildSegmentTree(rightTreeIndex, mid + 1, r);
-    this.#tree[treeIndex] = this.#merge.merge(this.#tree[leftTreeIndex], this.#tree[rightTreeIndex]);
+    this.#tree[treeIndex] = this.#merge.merge(
+      this.#tree[leftTreeIndex],
+      this.#tree[rightTreeIndex],
+    );
   }
 
   /**
@@ -71,13 +74,22 @@ export class SegmentTree<E> {
    * @param qr
    */
   query(ql: number, qr: number): E {
-    if (ql < 0 || ql >= this.#data.length || qr < 0 || qr >= this.#data.length || ql >= qr) {
+    if (
+      ql < 0 || ql >= this.#data.length || qr < 0 ||
+      qr >= this.#data.length || ql >= qr
+    ) {
       throw new RangeError("ql < qr");
     }
     return this.$query(0, 0, this.#data.length - 1, ql, qr);
   }
 
-  private $query(treeIndex: number, l: number, r: number, ql: number, qr: number): E {
+  private $query(
+    treeIndex: number,
+    l: number,
+    r: number,
+    ql: number,
+    qr: number,
+  ): E {
     if (l === ql && r === qr) {
       return this.#tree[treeIndex];
     }
