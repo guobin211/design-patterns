@@ -129,7 +129,6 @@ export class AVLTree<K, V> {
       console.warn(`unbalance: ${balance}`);
     }
     if (balance > 1 && this.$getBalance(node.left) >= 0) {
-
     }
     return node;
   }
