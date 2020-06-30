@@ -6,7 +6,8 @@ design patterns 理解设计模式
 
 Install [Deno][https://deno.land/]
 
-```bash
+```typescript
+
     // start
     deno run {fileName}
 
@@ -19,9 +20,12 @@ Install [Deno][https://deno.land/]
         // 私有方法以 `$` 开头
         private $getCode() {}
     }
+
 ```
-#### 类图
-[![Design](https://github.com/guobin211/design-patterns/blob/master/_static/Car.png)](https://github.com/guobin211/design-patterns)
+
+#### 适配器
+[![Design](https://github.com/guobin211/design-patterns/blob/master/_static/Adapter.png)](https://github.com/guobin211
+/design-patterns)
 
 #### 时序图
 [![Design](https://github.com/guobin211/design-patterns/blob/master/_static/UserCenter.png)](https://github.com/guobin211/design-patterns)
@@ -31,9 +35,11 @@ Install [Deno][https://deno.land/]
 
 ## 程序 = 数据结构 + 算法
 
-数据之间的关系
-数据变化的时间复杂度分析
-已实现的数据结构
+* 数据之间的关系
+
+* 数据变化的时间复杂度分析
+
+* 已实现的数据结构
 
 ```shell script
     
