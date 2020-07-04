@@ -7,7 +7,7 @@
 const constants = "function DyArray(length) {";
 
 function DyArray(length) {
-  'use strict';
+  "use strict";
   this.lenth = 0;
   this.data = Object.create(null);
   if (Number(length) >= 0) {

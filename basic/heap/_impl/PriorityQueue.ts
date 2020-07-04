@@ -4,7 +4,6 @@
  */
 import { IPriorityQueue } from "../_base/IPriorityQueue.ts";
 import { MaxHeap } from "./MaxHeap.ts";
-
 export class PriorityQueue<E> implements IPriorityQueue<E> {
   #maxHeap: MaxHeap<E>;
   constructor() {

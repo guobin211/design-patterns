@@ -24,8 +24,7 @@ Install [Deno][https://deno.land/]
 ```
 
 #### 适配器
-[![Design](https://github.com/guobin211/design-patterns/blob/master/_static/Adapter.png)](https://github.com/guobin211
-/design-patterns)
+[![Design](https://github.com/guobin211/design-patterns/blob/master/_static/Adapter.png)](https://github.com/guobin211/design-patterns)
 
 #### 时序图
 [![Design](https://github.com/guobin211/design-patterns/blob/master/_static/UserCenter.png)](https://github.com/guobin211/design-patterns)
