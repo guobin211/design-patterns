@@ -5,6 +5,7 @@ local
 temp
 cache
 node_modules
+cmake-build-debug
 
 yarn.lock.json
 package.lcok.json
