@@ -14,9 +14,9 @@ export function hash(obj: any): number {
       return JSHash(obj.toString(10));
     case "object":
       if (obj === null) {
-        throw new Error(`${obj} not support hash`);
+        throw new Error(`null not support hash`);
       } else {
-        return JSHash(obj.toString());
+        return JSHash(JSON.stringify(obj));
       }
     default:
       throw new Error(`${obj} not support hash`);

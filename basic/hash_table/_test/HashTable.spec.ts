@@ -17,7 +17,7 @@ class Person extends BaseHash {
 }
 
 function testHashTable() {
-  const count = 100;
+  const count = 16;
   const persons: Person[] = [];
   const hashTable = new HashTable<Person, Person>(count);
   for (let i = 0; i < count; i++) {
@@ -25,10 +25,10 @@ function testHashTable() {
     persons.push(person);
     hashTable.add(person, person);
   }
-  console.log(persons[99]);
-  console.log(hashTable.get(persons[0]));
-  hashTable.delete(persons[0]);
-  console.log(hashTable.get(persons[1]));
+  console.log(persons.length === hashTable.size);
+  const p = persons[15];
+  const t = hashTable.get(p);
+  console.log(p, t);
 }
 
 testHashTable();

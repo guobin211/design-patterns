@@ -52,8 +52,8 @@ export class HashTable<K extends BaseHash, V> implements IHashTable<K, V> {
         res = val;
         map.delete(key);
         this.#size--;
-        if (this.#size < LowerTol * this.#capacity && this.#capacity > 7) {
-          this.$resize(this.#capacity / 2);
+        if (this.#size < LowerTol * this.#capacity && this.#capacity > 14) {
+          this.$resize(Math.ceil(this.#capacity / 2));
         }
       }
     }
@@ -83,15 +83,19 @@ export class HashTable<K extends BaseHash, V> implements IHashTable<K, V> {
   }
 
   private $resize(capacity: number) {
-    const newData: Map<K, V>[] = new Array(capacity);
-    for (let i = 0; i < capacity; i++) {
-      newData[i] = new Map();
-    }
+    const newData: Map<K, V>[] = [];
     for (let i = 0; i < this.#capacity; i++) {
       const old = this.#data[i];
       if (old) {
         for (const [k, v] of old.entries()) {
-          newData[this.$hash(k)].set(k, v);
+          const index = this.$hash(k);
+          if (newData[index]) {
+            newData[index].set(k, v);
+          } else {
+            const map = new Map();
+            map.set(k, v);
+            newData[index] = map;
+          }
         }
       }
     }
