@@ -4,7 +4,9 @@
 
 ## Deno Start
 
-<a href="https://deno.land/" target="_blank">Install Deno</a>
+<p align="center">
+  <a href="https://deno.land/">Install Deno</a>
+</p>
 
 ```typescript
 
