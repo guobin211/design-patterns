@@ -4,7 +4,7 @@
 
 ## Deno Start
 
-Install `Deno` [https://deno.land/][Demo]
+<a href="https://deno.land/" target="_blank">Install Deno</a>
 
 ```typescript
 
@@ -27,7 +27,7 @@ Install `Deno` [https://deno.land/][Demo]
 
 **程序 = 数据结构 + 算法**
 
-<img src=".github/data-structure.png" alt="data-structure">
+<img src="_static/data-structure.png" alt="data-structure">
 
 ### Files
 
@@ -54,7 +54,8 @@ Install `Deno` [https://deno.land/][Demo]
 ```
 
 #### 树结构
-[![Design](https://github.com/guobin211/design-patterns/blob/master/_static/bst_tree.png)](https://github.com/guobin211/design-patterns)
+
+<img src="_static/bst_tree.png" alt="bst_tree">
 
 ## 设计模式
 
@@ -97,10 +98,10 @@ Install `Deno` [https://deno.land/][Demo]
 策略模式
 
 #### 适配器
-[![Design](https://github.com/guobin211/design-patterns/blob/master/_static/Adapter.png)](https://github.com/guobin211/design-patterns)
+<img src="_static/Adapter.png" alt="Adapter">
 
 #### 时序图
-[![Design](https://github.com/guobin211/design-patterns/blob/master/_static/UserCenter.png)](https://github.com/guobin211/design-patterns)
+<img src="_static/UserCenter.png" alt="UserCenter">
 
 ## 软件架构
 
