@@ -4,7 +4,7 @@
 
 ## Deno Start
 
-Install [Deno][https://deno.land/]
+Install `Deno` [https://deno.land/][Demo]
 
 ```typescript
 
@@ -109,3 +109,6 @@ MVC
 MVP
 
 MV-VM
+
+
+[Demo]: https://deno.land/
