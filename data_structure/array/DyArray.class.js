@@ -16,7 +16,7 @@ function DyArray(length) {
 }
 
 DyArray.isArray = function (arr) {
-  return arr.__proto__.constructor.toString().startsWith(constants);
+  return arr.__proto__ === this.prototype;
 };
 
 DyArray.prototype.get = function (index) {
