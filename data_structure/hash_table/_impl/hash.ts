@@ -1,25 +1,15 @@
 /**
- * hash.ts
+ * hash.ts 计算对象hash值
  * @author GuoBin 2020-06-24
  */
-
 export function hash(obj: any): number {
   const type = typeof obj;
-  switch (type) {
-    case "bigint":
-      return JSHash(obj.toString(10));
-    case "string":
-      return JSHash(obj);
-    case "number":
-      return JSHash(obj.toString(10));
-    case "object":
-      if (obj === null) {
-        throw new Error(`null not support hash`);
-      } else {
-        return JSHash(JSON.stringify(obj));
-      }
-    default:
-      throw new Error(`${obj} not support hash`);
+  if (["bigint", "string", "number"].includes(type)) {
+    return JSHash(obj.toString(10));
+  } else if (type === "object" && obj !== null) {
+    return JSHash(JSON.stringify(obj));
+  } else {
+    throw new Error(`${obj} not support hash`);
   }
 }
 
