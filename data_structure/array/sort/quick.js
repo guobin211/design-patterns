@@ -11,30 +11,30 @@ export function quickSort(arr, l, r) {
   let len = arr.length,
     partitionIndex,
     left = typeof l !== "number" ? 0 : l,
-    right = typeof r !== "number" ? len - 1 : r
+    right = typeof r !== "number" ? len - 1 : r;
   if (left < right) {
-    partitionIndex = partition(arr, left, right)
-    quickSort(arr, left, partitionIndex - 1)
-    quickSort(arr, partitionIndex + 1, right)
+    partitionIndex = partition(arr, left, right);
+    quickSort(arr, left, partitionIndex - 1);
+    quickSort(arr, partitionIndex + 1, right);
   }
-  return arr
+  return arr;
 }
 
 function partition(arr, left, right) {
   let pivot = left,
-    index = pivot + 1
+    index = pivot + 1;
   for (let i = index; i <= right; i++) {
     if (arr[i] < arr[pivot]) {
-      swap(arr, i, index)
-      index++
+      swap(arr, i, index);
+      index++;
     }
   }
-  swap(arr, pivot, index - 1)
-  return index - 1
+  swap(arr, pivot, index - 1);
+  return index - 1;
 }
 
 function swap(arr, i, j) {
-  const temp = arr[i]
-  arr[i] = arr[j]
-  arr[j] = temp
+  const temp = arr[i];
+  arr[i] = arr[j];
+  arr[j] = temp;
 }

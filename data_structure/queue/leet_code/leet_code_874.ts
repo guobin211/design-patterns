@@ -16,7 +16,7 @@ function numSquares(n: number): number {
   for (let i = 0; i < max_square_index; i++) {
     square_nums[i] = i * i;
   }
-  for (let i = 0; i <= n ; i++) {
+  for (let i = 0; i <= n; i++) {
     for (let j = 1; j < max_square_index; j++) {
       if (i < square_nums[j]) {
         break;

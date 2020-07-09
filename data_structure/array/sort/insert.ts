@@ -10,7 +10,7 @@ export function insertSort(arr: number[]) {
   for (let i = 1; i < arr.length; i++) {
     for (let j = i; j > 0; j--) {
       if (arr[j] < arr[j - 1]) {
-        SortHelper.swap(arr,j,j-1);
+        SortHelper.swap(arr, j, j - 1);
       } else {
         break;
       }
@@ -18,6 +18,6 @@ export function insertSort(arr: number[]) {
   }
 }
 
-const arr = SortHelper.randomArray(10, 0 ,10);
+const arr = SortHelper.randomArray(10, 0, 10);
 insertSort(arr);
 console.log(arr);

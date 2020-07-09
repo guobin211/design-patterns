@@ -18,6 +18,6 @@ export function selectionSort(arr: number[]) {
   }
 }
 
-const arr = SortHelper.randomArray(10, 0 ,10);
+const arr = SortHelper.randomArray(10, 0, 10);
 selectionSort(arr);
 console.log(arr);

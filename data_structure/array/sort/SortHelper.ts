@@ -41,4 +41,3 @@ const arr = SortHelper.randomArray(100, 10, 100);
 console.log(SortHelper.isSortArray(arr));
 arr.sort();
 console.log(SortHelper.isSortArray(arr));
-
