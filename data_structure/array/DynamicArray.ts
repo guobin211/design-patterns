@@ -166,7 +166,7 @@ class DynamicArray<E> {
   /**
    * 迭代器
    */
-  private [Symbol.iterator]() {
+  [Symbol.iterator]() {
     const that = this;
     let index = 0;
     return {
