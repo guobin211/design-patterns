@@ -19,12 +19,15 @@
         return _value;
       },
       set(v) {
-        _value = v;
-        notify();
+        if (_value !== v) {
+          _value = v;
+          notify();
+        }
       },
     });
 
     btn.addEventListener("click", function (e) {
+      e.stopPropagation();
       form.username = Math.random() * 100;
     }, true);
 
