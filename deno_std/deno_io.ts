@@ -1,4 +1,4 @@
-const {stdout, stdin, open, copy, args} = Deno;
+const { stdout, stdin, open, copy, args } = Deno;
 
 const MAX_COUNT = 10;
 let cin: string;

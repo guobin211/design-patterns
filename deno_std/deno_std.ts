@@ -92,4 +92,4 @@ function logProps() {
   }
 }
 
-logProps()
+logProps();
