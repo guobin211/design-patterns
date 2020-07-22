@@ -13,4 +13,4 @@ const jack = new Person();
 
 addEventListener("click", (e) => jack.handleEvent(e));
 
-dispatchEvent(new Event("click"))
+dispatchEvent(new Event("click"));

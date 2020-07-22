@@ -7,8 +7,8 @@ console.log(a);
 const b = atob(a);
 console.log(b);
 
-fetch("https://www.baidu.com/").then(res => res.text()).then(html => {
+fetch("https://www.baidu.com/").then((res) => res.text()).then((html) => {
   console.log(html);
-}).catch(e => {
+}).catch((e) => {
   console.log(e);
-})
+});
