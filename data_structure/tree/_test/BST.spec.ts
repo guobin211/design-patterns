@@ -4,10 +4,10 @@
  * @Author GuoBin<guobin201314@gmail.com>
  * @Project design-patterns
  */
-import { BST } from "../_impl/BST.ts";
+import { BSTree } from "../_impl/BST.ts";
 
 {
-  const bst = new BST(3);
+  const bst = new BSTree(3);
   const arr = [1, 2, 4, 5];
   for (const n of arr) {
     bst.add(n);

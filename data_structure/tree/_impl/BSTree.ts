@@ -1,5 +1,5 @@
 /**
- * BST.ts
+ * BSTree.ts 二分搜索树
  * @Date 2020-06-22
  * @Author GuoBin<guobin201314@gmail.com>
  * @Project design-patterns
@@ -30,7 +30,7 @@ class Node<E> {
   constructor(public e: E) {}
 }
 
-export class BST<E> implements IBST<E> {
+export class BSTree<E> implements IBST<E> {
   #root: NodeOrNull<E>;
   #size: number;
   #res: string = "";
@@ -320,10 +320,10 @@ export class BST<E> implements IBST<E> {
 
   private $toString(node: NodeOrNull<E>, depth: number) {
     if (node === null) {
-      this.#res += (BST.$depth(depth) + "null\n");
+      this.#res += (BSTree.$depth(depth) + "null\n");
       return;
     }
-    this.#res += (BST.$depth(depth) + node.e + "null\n");
+    this.#res += (BSTree.$depth(depth) + node.e + "null\n");
     this.$toString(node.left, depth + 1);
     this.$toString(node.right, depth + 1);
   }
