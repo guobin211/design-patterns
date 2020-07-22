@@ -8,6 +8,8 @@
   <a href="https://deno.land/">Install Deno</a>
 </p>
 
+<img src="_static/Deno.png" alt="deno"/>
+
 ```typescript
 
     // start
