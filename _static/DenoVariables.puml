@@ -1,0 +1,22 @@
+@startmindmap
+* Deno
+** Variables
+*** AbortSignal
+*** Blob
+*** File
+*** FormData
+*** ReadableStream
+*** URLSearchParams
+*** Performance
+*** Request
+*** Response
+*** Headers
+*** window
+*** self
+*** console
+*** Deno.args
+*** Deno.build
+*** Deno.stdin
+*** Deno.customInspect
+*** Deno.env
+@endmindmap

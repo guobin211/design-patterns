@@ -1,0 +1,17 @@
+@startmindmap
+* Deno
+** Functions
+** Variables
+** Classes
+** Interfaces
+** Enums
+*** Deno.SeekMode
+** Type Aliases
+*** Deno.Addr
+*** Deno.ProcessStatus
+*** EventListenerOrEventListenerObject
+*** PerformanceEntryList
+** Namespace
+*** Deno
+*** WebAssembly
+@endmindmap

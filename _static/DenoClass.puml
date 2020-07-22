@@ -1,0 +1,21 @@
+@startmindmap
+* Deno
+** Classes
+*** AbortController
+*** ByteLengthQueuingStrategy
+*** Console
+*** CountQueuingStrategy
+*** CustomEvent
+*** DOMException
+*** PerformanceEntry
+*** PerformanceMark
+*** PerformanceMeasure
+*** TextDecoder
+*** TextEncoder
+*** TransformStream
+*** WritableStream
+*** Worker
+*** Deno.Buffer
+*** Deno.File
+*** Deno.Process
+@endmindmap

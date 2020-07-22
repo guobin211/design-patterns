@@ -1,0 +1,33 @@
+@startmindmap
+* Deno
+** Interfaces
+*** Crypto
+*** ImportMeta
+*** Performance
+*** PerformanceMarkOptions
+*** PerformanceMeasureOptions
+*** Window
+*** Deno.Closer
+*** Deno.Conn
+*** Deno.ConnectOptions
+*** Deno.ConnectTlsOptions
+*** Deno.DirEntry
+*** Deno.FileInfo
+*** Deno.FsEvent
+*** Deno.InspectOptions
+*** Deno.ListenOptions
+*** Deno.ListenTlsOptions
+*** Deno.Listener
+*** Deno.MakeTempOptions
+*** Deno.Metrics
+*** Deno.MkdirOptions
+*** Deno.NetAddr
+*** Deno.OpenOptions
+*** Deno.Reader
+*** Deno.RemoveOptions
+*** Deno.RunOptions
+*** Deno.Seeker
+*** Deno.WriteFileOptions
+*** Deno.Writer
+*** Deno.UnixAddr
+@endmindmap
