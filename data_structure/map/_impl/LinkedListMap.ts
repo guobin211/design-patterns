@@ -1,5 +1,5 @@
 /**
- * LinkedListMap.ts
+ * LinkedListMap.ts 基于链表实现
  * @Date 2020-06-23
  * @Author GuoBin<guobin201314@gmail.com>
  */

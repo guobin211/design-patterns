@@ -1,11 +1,9 @@
 /**
- * DyArray.class.js
+ * DyArray.class.js es5 Array
  * @Date 2020-06-21
  * @Author GuoBin<guobin201314@gmail.com>
  * @Project design-patterns
  */
-const constants = "function DyArray(length) {";
-
 function DyArray(length) {
   "use strict";
   this.lenth = 0;
@@ -16,7 +14,10 @@ function DyArray(length) {
 }
 
 DyArray.isArray = function (arr) {
-  return arr.__proto__ === this.prototype;
+  if (arr) {
+    return arr.__proto__ === this.prototype;
+  }
+  return false;
 };
 
 DyArray.prototype.get = function (index) {
@@ -43,7 +44,7 @@ DyArray.prototype.toString = function () {
 };
 
 DyArray.prototype.concat = function (arr) {
-  if (!arr.__proto__.constructor.toString().startsWith(constants)) {
+  if (!arr || !!arr.isArray()) {
     throw new TypeError("arr must be DyArray");
   }
   const size = this.lenth + arr.lenth;
@@ -151,6 +152,10 @@ DyArray.prototype[Symbol.iterator] = function* () {
       }
     },
   };
+};
+
+DyArray.prototype[Symbol.toStringTag] = function () {
+  return "[Object DyArray]";
 };
 
 module.exports = {

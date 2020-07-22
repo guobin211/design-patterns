@@ -1,5 +1,5 @@
 /**
- * LoopQueue.ts
+ * LoopQueue.ts 循环队列
  * @Date 2020-06-21
  * @Author GuoBin<guobin201314@gmail.com>
  * @Project design-patterns

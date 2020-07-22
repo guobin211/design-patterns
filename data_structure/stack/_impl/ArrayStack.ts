@@ -1,5 +1,5 @@
 /**
- * ArrayStack.ts
+ * ArrayStack.ts 基于数组实现的Stack
  * @Date 2020-06-21
  * @Author GuoBin<guobin201314@gmail.com>
  * @Project design-patterns

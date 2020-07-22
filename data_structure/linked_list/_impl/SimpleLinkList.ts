@@ -1,5 +1,5 @@
 /**
- * SimpleLinkList.ts
+ * SimpleLinkList.ts 简单的单链表
  * @Date 2020-06-21
  * @Author GuoBin<guobin201314@gmail.com>
  * @Project design-patterns
@@ -7,7 +7,8 @@
 import { SimpleNode } from "./SimpleNode.ts";
 
 export class SimpleLinkList<E> {
-  #dummyHead: SimpleNode<E>;
+  // 虚拟头节点
+  readonly #dummyHead: SimpleNode<E>;
   #size: number;
   get size() {
     return this.#size;

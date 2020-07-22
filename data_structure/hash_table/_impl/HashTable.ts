@@ -1,5 +1,5 @@
 /**
- * HashTable.ts
+ * HashTable.ts hash表的一种实现
  * @author GuoBin 2020-06-24
  */
 import { IHashTable } from "../_base/IHashTable.ts";

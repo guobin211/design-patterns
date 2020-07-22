@@ -1,6 +1,8 @@
 /**
- * MaxHeap.ts
+ * MaxHeap.ts 最大堆
  * @author GuoBin 2020-06-24
+ * 根结点（亦称为堆顶）的关键字是堆里所有结点关键字中最大者，称为大根堆，又称最大堆（大顶堆）
+ * 大根堆要求根节点的关键字既大于或等于左子树的关键字值，又大于或等于右子树的关键字值
  */
 interface MaxHeapConstructor<E> {
   array?: E[];

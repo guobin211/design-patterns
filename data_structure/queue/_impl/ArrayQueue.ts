@@ -1,5 +1,5 @@
 /**
- * ArrayQueue.ts
+ * ArrayQueue.ts 数组队列
  * @Date 2020-06-21
  * @Author GuoBin<guobin201314@gmail.com>
  * @Project design-patterns

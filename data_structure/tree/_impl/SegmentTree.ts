@@ -1,5 +1,5 @@
 /**
- * SegmentTree.ts 线段树-区间数
+ * SegmentTree.ts 线段树-区间树
  * @author GuoBin 2020-06-24
  */
 import { IMerge } from "../_base/IMerge.ts";

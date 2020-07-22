@@ -1,6 +1,7 @@
 /**
  * Trie.ts 字典树-处理字符串
  * @author GuoBin 2020-06-24
+ * 字典树是一种n叉树
  */
 
 class Node {
@@ -59,7 +60,7 @@ export class Trie {
 
   /**
    * 查看是否存在前缀
-   * @param prefix
+   * @param prefix string
    */
   isPrefix(prefix: string): boolean {
     let curr = this.#root;
