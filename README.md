@@ -13,15 +13,15 @@
 ```typescript
 
     // start
-    deno run {fileName}
+    deno run -A ${fileName}
 
     class Node {
-        // 私有属性以 `#` 开头
+        // 私有属性以 `#` 开头,ES2020新特性
         #size: number = 0;
         get size() {
             return this.$size;
         }
-        // 私有方法以 `$` 开头
+        // 私有方法以 `$` 开头,或者使用`_getCode()`方式
         private $getCode() {}
     }
 
@@ -51,7 +51,7 @@
     QuickUnion
     UnionFind
     ArrayStack
-    BST
+    BSTree
     SegmentTree
     Trie
 
