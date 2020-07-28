@@ -1,4 +1,4 @@
-const singletonify = (className) => {
+const singletons = (className) => {
   return new Proxy(className.prototype.constructor, {
     instance: null,
     construct: (target, argumentsList) => {
@@ -20,7 +20,7 @@ class Person {
   }
 }
 
-SingletonPerson = singletonify(Person);
+SingletonPerson = singletons(Person);
 
 const person1 = new SingletonPerson("jack");
 const person2 = new SingletonPerson("tom");
