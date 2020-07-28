@@ -1,5 +1,6 @@
 /**
  * ProxyFn.js
+ * 用于定义基本操作的自定义行为（如属性查找、赋值、枚举、函数调用等）代理整个对象,解决DefinePropoty的问题
  * @Date 2020-06-19
  * @Author GuoBin<guobin201314@gmail.com>
  * @Project design-patterns
