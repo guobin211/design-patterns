@@ -84,16 +84,17 @@ function applyMixins(derivedCtor: any, constructs: any[]) {
   });
 }
 // 合并对象
-function extend<First, Second>(first: First, second: Second): First & Second {
-  const result: Partial<First & Second> = {};
+function extend<First extends Object, Second extends Object>(
+  first: First,
+  second: Second,
+): First & Second {
+  const result = {} as First & Second;
   for (const prop in first) {
-    // @ts-ignore
     if (first.hasOwnProperty(prop)) {
       (result as First)[prop] = first[prop];
     }
   }
   for (const prop in second) {
-    // @ts-ignore
     if (second.hasOwnProperty(prop)) {
       (result as Second)[prop] = second[prop];
     }

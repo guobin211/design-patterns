@@ -4,6 +4,24 @@ export interface UserInfo {
   token: string;
 }
 
+export enum ApiUser {
+  Admin = "/api/user/phone",
+  Visiter = "/api/user/phone",
+}
+
+export type UserDataRecord = Record<ApiUser, UserInfo>;
+
+export interface UserApiMap {
+  [ApiUser.Admin]: UserInfo;
+  [ApiUser.Visiter]: UserInfo;
+}
+
+function getUserInfoByApi<URL extends keyof UserApiMap>(
+  url: URL,
+): Promise<UserApiMap[URL]> {
+  return fetch(url).then((res) => res.json());
+}
+
 /**
  * 定义接口
  */
