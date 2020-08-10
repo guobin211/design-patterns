@@ -6,14 +6,14 @@ export interface UserInfo {
 
 export enum ApiUser {
   Admin = "/api/user/phone",
-  Visiter = "/api/user/phone",
+  Visitor = "/api/user/phone",
 }
 
 export type UserDataRecord = Record<ApiUser, UserInfo>;
 
 export interface UserApiMap {
   [ApiUser.Admin]: UserInfo;
-  [ApiUser.Visiter]: UserInfo;
+  [ApiUser.Visitor]: UserInfo;
 }
 
 function getUserInfoByApi<URL extends keyof UserApiMap>(
