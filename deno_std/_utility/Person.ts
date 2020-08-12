@@ -54,3 +54,6 @@ export class WoMen extends Person implements SelfIntroduction {
     super(name, age, Gender.WOMEN);
   }
 }
+
+new Man("jack", 30).introduce();
+new WoMen("mary", 30).introduce();

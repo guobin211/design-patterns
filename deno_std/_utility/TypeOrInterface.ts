@@ -32,3 +32,6 @@ export class MapTypeParser implements TypeOrInterface {
     }
   }
 }
+
+const res = new MapTypeParser().parsedType("Hello");
+console.log(res);

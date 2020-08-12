@@ -16,7 +16,7 @@
     deno run -A ${fileName}
 
     class Node {
-        // 私有属性以 `#` 开头,ES2020新特性
+        // 私有属性以 `#` 开头, ES2020新特性, js中通常以 `_`开头的表示私有属性
         #size: number = 0;
         get size() {
             return this.$size;
