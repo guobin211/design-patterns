@@ -11,9 +11,13 @@ console.log(
   source.match(reg),
 );
 
-const regs = {
-  phone: /^+?[\d\s]{3,}$/,
-  int: /^-?\d+$/,
-  email: /^([a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4})*$/,
-  visa: /^(4[0-9]{12}(?:[0-9]{3})?)*$/,
-};
+const BigName = new RegExp("^[A-Z][a-z]+,", "g");
+
+console.log(BigName.test("Jack"));
+console.log(BigName.test("tom"));
+// 多个匹配
+const res = BigName.exec("Jack, Tom, Mary");
+console.log(res);
+res?.forEach((value, index, array) => {
+  console.log(value);
+});
