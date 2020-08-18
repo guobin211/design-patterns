@@ -4,7 +4,7 @@
  * @Author GuoBin<guobin201314@gmail.com>
  * @Project design-patterns
  */
-import { BSTree } from "../_impl/BST.ts";
+import { BSTree } from "../_impl/BSTree.ts";
 
 {
   const bst = new BSTree(3);
