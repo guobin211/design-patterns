@@ -33,7 +33,7 @@
     component: btn,
     render: () => {
       app.innerHTML = btn.render();
-    }
+    },
   };
   manager.render();
 
