@@ -1,4 +1,4 @@
-const state: any = {};
+const state: Record<string | number, unknown> = {};
 let key = 0;
 
 const input = function (value: object | string | number, _key?: number) {

@@ -1,11 +1,15 @@
 const data: any = {
-  name: "define data"
-}
+  name: "define data",
+};
 
 const proxyData = new Proxy(data, {
-  defineProperty(target: { name: string }, p: PropertyKey, attributes: PropertyDescriptor): boolean {
+  defineProperty(
+    target: { name: string },
+    p: PropertyKey,
+    attributes: PropertyDescriptor,
+  ): boolean {
     if (p === "name") {
-      console.warn("PropertyKey name cannot be defined")
+      console.warn("PropertyKey name cannot be defined");
       return false;
     }
     Object.defineProperty(target, p, attributes);
@@ -23,7 +27,7 @@ const proxyData = new Proxy(data, {
   //   (target as any)[p] = value;
   //   return true;
   // }
-})
+});
 
 console.log(proxyData.hasOwnProperty("name"));
 Object.defineProperty(data, "age", { value: 22 });
