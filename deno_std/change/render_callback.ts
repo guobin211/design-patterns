@@ -24,7 +24,7 @@ const renderer: Renderer = {
     return this;
   },
   mainTask() {
-    // 模拟浏览器requsetAnimationFrame
+    // 模拟浏览器requestAnimationFrame
     setInterval(() => {
       while (this.elements.length) {
         const el = this.elements.shift();
