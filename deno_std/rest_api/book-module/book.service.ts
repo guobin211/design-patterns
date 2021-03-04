@@ -1,12 +1,12 @@
 import { BookVm } from "./book.vm.ts";
 
 let books: BookVm[] = [
-  { id: "1", title: 'deno', anthor: "rua"}
+  { id: "1", title: 'deno', author: "rua"}
 ];
 
 export class BookService {
   async createBook(bv: Partial<BookVm>): Promise<BookVm> {
-    const book = Object.assign({ id: "", title: "", anthor: "" }, bv, { id: (books.length + 1).toString(10) });
+    const book = Object.assign({ id: "", title: "", author: "" }, bv, { id: (books.length + 1).toString(10) });
     books.push(book);
     return book;
   }

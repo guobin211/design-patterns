@@ -1,6 +1,5 @@
 // @ts-ignore
 import * as path from "https://deno.land/std@0.88.0/path/mod.ts";
-// @ts-ignore
 import {
   Application,
   send,
@@ -12,6 +11,7 @@ import {
   Router,
   Response,
   RouterContext as OakRouterContext
+  // @ts-ignore
 } from "https://deno.land/x/oak/mod.ts";
 
 export {
