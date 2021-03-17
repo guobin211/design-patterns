@@ -11,8 +11,7 @@
 <img src="_static/Deno.png" alt="deno"/>
 
 ```typescript
-
-    // start
+// start
     deno run -A ${fileName}
 
     class Node {
@@ -24,7 +23,6 @@
         // 私有方法以 `$` 开头,或者使用`_getCode()`方式
         private $getCode() {}
     }
-
 ```
 
 ## 数据结构
@@ -36,8 +34,7 @@
 ### Files
 
 ```shell script
-    
-    Array
+Array
     HashTable
     MaxHeap
     SimpleLinkList
@@ -54,7 +51,6 @@
     BSTree
     SegmentTree
     Trie
-
 ```
 
 #### 树结构
@@ -102,9 +98,11 @@
 策略模式
 
 #### 适配器
+
 <img src="_static/Adapter.png" alt="Adapter">
 
 #### 时序图
+
 <img src="_static/UserCenter.png" alt="UserCenter">
 
 ## 软件架构
@@ -114,6 +112,5 @@ MVC
 MVP
 
 MV-VM
-
 
 [Demo]: https://deno.land/

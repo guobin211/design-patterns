@@ -1,7 +1,7 @@
 {
-	"version": "0.2.0",
-	"configurations": [
-		{
+  "version": "0.2.0",
+  "configurations": [
+    {
       "name": "Deno",
       "type": "node",
       "request": "launch",
@@ -9,6 +9,6 @@
       "runtimeExecutable": "deno",
       "runtimeArgs": ["run", "--inspect-brk", "-A", "${file}"],
       "port": 9229
-		}
-	]
+    }
+  ]
 }

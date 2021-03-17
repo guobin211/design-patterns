@@ -1,0 +1,10 @@
+{
+  "imports": {
+    "async": "https://deno.land/std@0.90.0/async/mod.ts",
+    "fs": "https://deno.land/std@0.90.0/fs/mod.ts",
+    "io": "https://deno.land/std@0.90.0/io/mod.ts",
+    "bytes": "https://deno.land/std@0.90.0/bytes/mod.ts",
+    "datatime": "https://deno.land/std@0.90.0/datetime/mod.ts",
+    "http": "https://deno.land/std@0.90.0/http/server.ts"
+  }
+}

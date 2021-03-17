@@ -1,12 +1,14 @@
 import { BookVm } from "./book.vm.ts";
 
 let books: BookVm[] = [
-  { id: "1", title: 'deno', author: "rua"}
+  { id: "1", title: "deno", author: "rua" },
 ];
 
 export class BookService {
   async createBook(bv: Partial<BookVm>): Promise<BookVm> {
-    const book = Object.assign({ id: "", title: "", author: "" }, bv, { id: (books.length + 1).toString(10) });
+    const book = Object.assign({ id: "", title: "", author: "" }, bv, {
+      id: (books.length + 1).toString(10),
+    });
     books.push(book);
     return book;
   }
@@ -16,14 +18,14 @@ export class BookService {
   }
 
   async getBook(id: string) {
-    return books.find(e => e.id === id);
+    return books.find((e) => e.id === id);
   }
 
   async updateBook(bv: BookVm) {
     let b = await this.getBook(bv.id);
     if (b) {
-      b = {...b, ...bv};
-      books = [...books.filter(el => el.id !== bv.id), b];
+      b = { ...b, ...bv };
+      books = [...books.filter((el) => el.id !== bv.id), b];
       return b;
     } else {
       return false;
