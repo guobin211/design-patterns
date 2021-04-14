@@ -1,0 +1,22 @@
+{
+  "name": "design-patterns",
+  "version": "1.0.0",
+  "description": "使用Deno理解设计模式",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/guobin211/design-patterns.git"
+  },
+  "author": "GuoBin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/guobin211/design-patterns/issues"
+  },
+  "homepage": "https://github.com/guobin211/design-patterns#readme",
+  "devDependencies": {
+    "typescript": "^4.2.4"
+  }
+}
