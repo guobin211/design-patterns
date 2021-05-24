@@ -2,10 +2,10 @@
 import * as parse5 from "https://deno.land/x/parse5/parse5/lib/index.js";
 
 function parseHtml(code: string) {
-  return parse5.parse(code,  {});
+  return parse5.parse(code, {});
 }
 
-const buf =  Deno.readFileSync('./source_code/index.html');
+const buf = Deno.readFileSync("./source_code/index.html");
 const decoder = new TextDecoder("utf-8");
 const str = decoder.decode(buf);
 
@@ -24,4 +24,3 @@ function logNode(astNode: any) {
 }
 
 logNode(node);
-

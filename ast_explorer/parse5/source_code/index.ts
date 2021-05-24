@@ -8,18 +8,18 @@
 const _window = window as any;
 
 function asyncTask() {
-  fetch('/data.json').then(res => res.json()).then(console.log);
+  fetch("/data.json").then((res) => res.json()).then(console.log);
 }
 
 function init() {
-  _window.document.body.innerText = 'dom init'
+  _window.document.body.innerText = "dom init";
 }
 
 function bootstrap() {
   init();
   _window.requestAnimationFrame(() => {
     asyncTask();
-  })
+  });
 }
 
 bootstrap();

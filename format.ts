@@ -11,11 +11,19 @@ export async function pipeDirTask(dir: string, task: FileJobFunction) {
   try {
     const dirInfo = Deno.statSync(dir);
     if (dirInfo.isDirectory) {
+      if (
+        dir.endsWith("node_modules") || dir.endsWith("build") ||
+        dir.endsWith("dist")
+      ) {
+        return;
+      }
       for (const dirEntry of Deno.readDirSync(dir)) {
         await pipeDirTask(dir.concat(`/${dirEntry.name}`), task);
       }
     } else {
-      await task(dir);
+      if (dir.endsWith(".ts")) {
+        await task(dir);
+      }
     }
   } catch (e) {
     console.error(e.message, dir);
