@@ -8,14 +8,14 @@ interface PageInfo {
 }
 
 // 类型
-type Page = "Home" | "About" | "Contact";
+type PageType = "Home" | "About" | "Contact";
 
 // 属性可选
 type CanUndefined = Partial<PageInfo>;
 // 属性只读
 type ReadonlyProps = Readonly<PageInfo>;
 // 组合记录类型和接口
-const pages: Record<Page, PageInfo> = {
+const pages: Record<PageType, PageInfo> = {
   Home: {
     title: "主页",
   },
@@ -101,3 +101,5 @@ function extend<First extends Object, Second extends Object>(
   }
   return result as First & Second;
 }
+
+export {}

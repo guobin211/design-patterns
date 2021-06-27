@@ -6,10 +6,11 @@
  */
 function DyArray(length) {
   "use strict";
-  this.lenth = 0;
+  this.length = 0;
+  this.__proto__= DyArray.prototype;
   this.data = Object.create(null);
   if (Number(length) >= 0) {
-    this.lenth = length;
+    this.length = length;
   }
 }
 
@@ -25,7 +26,7 @@ DyArray.prototype.get = function (index) {
 };
 
 DyArray.prototype.set = function (index, value) {
-  if (index < 0 || index >= this.lenth) {
+  if (index < 0 || index >= this.length) {
     throw new RangeError("index is out of length");
   }
   this.data[index] = value;
@@ -33,9 +34,9 @@ DyArray.prototype.set = function (index, value) {
 
 DyArray.prototype.toString = function () {
   let res = "[";
-  for (let i = 0; i < this.lenth; i++) {
+  for (let i = 0; i < this.length; i++) {
     res += this.data[i];
-    if (i < this.lenth - 1) {
+    if (i < this.length - 1) {
       res += ", ";
     }
   }
@@ -47,20 +48,20 @@ DyArray.prototype.concat = function (arr) {
   if (!arr || !!arr.isArray()) {
     throw new TypeError("arr must be DyArray");
   }
-  const size = this.lenth + arr.lenth;
+  const size = this.length + arr.length;
   const res = new DyArray();
   for (let i = 0; i < size; i++) {
-    if (i < this.lenth) {
+    if (i < this.length) {
       res.push(this.data[i]);
     } else {
-      res.push(arr.get(i - this.lenth));
+      res.push(arr.get(i - this.length));
     }
   }
   return res;
 };
 
 DyArray.prototype.every = function (callback) {
-  for (let i = 0; i < this.lenth; i++) {
+  for (let i = 0; i < this.length; i++) {
     if (!callback(this.data[i])) {
       return false;
     }
@@ -69,8 +70,8 @@ DyArray.prototype.every = function (callback) {
 };
 
 DyArray.prototype.push = function (e) {
-  this.data[this.lenth] = e;
-  this.lenth++;
+  this.data[this.length] = e;
+  this.length++;
   return this;
 };
 
@@ -78,8 +79,8 @@ DyArray.prototype.fill = function (value, start, end) {
   if (start < 0 || start > end) {
     throw new RangeError("start must <= end and >=0 ");
   }
-  if (end > this.lenth) {
-    end = this.lenth;
+  if (end > this.length) {
+    end = this.length;
   }
   for (let i = start; i < end; i++) {
     this.data[i] = value;
@@ -88,7 +89,7 @@ DyArray.prototype.fill = function (value, start, end) {
 
 DyArray.prototype.filter = function (callbackFn) {
   const res = new DyArray();
-  for (let i = 0; i < this.lenth; i++) {
+  for (let i = 0; i < this.length; i++) {
     if (callbackFn(this.data[i])) {
       res.push(this.data[i]);
     }
@@ -97,7 +98,7 @@ DyArray.prototype.filter = function (callbackFn) {
 };
 
 DyArray.prototype.findIndex = function (value) {
-  for (let i = 0; i < this.lenth; i++) {
+  for (let i = 0; i < this.length; i++) {
     if (this.data[i] === value) {
       return i;
     }
@@ -106,31 +107,31 @@ DyArray.prototype.findIndex = function (value) {
 };
 
 DyArray.prototype.forEach = function (callbackFn) {
-  for (let i = 0; i < this.lenth; i++) {
+  for (let i = 0; i < this.length; i++) {
     callbackFn(this.data[i]);
   }
 };
 
 DyArray.prototype.pop = function () {
-  const res = this.data[this.lenth - 1];
-  delete this.data[this.lenth - 1];
-  this.lenth--;
+  const res = this.data[this.length - 1];
+  delete this.data[this.length - 1];
+  this.length--;
   return res;
 };
 
 DyArray.prototype.shift = function () {
   const res = this.data[0];
-  for (let i = 0; i < this.lenth - 1; i++) {
+  for (let i = 0; i < this.length - 1; i++) {
     this.data[i] = this.data[i + 1];
   }
-  delete this.data[this.lenth - 1];
-  this.lenth--;
+  delete this.data[this.length - 1];
+  this.length--;
   return res;
 };
 
 DyArray.prototype.unshift = function (value) {
-  this.lenth++;
-  for (let i = this.lenth - 1; i >= 0; i--) {
+  this.length++;
+  for (let i = this.length - 1; i >= 0; i--) {
     if (i === 0) {
       this.data[i] = value;
     } else {
@@ -145,7 +146,7 @@ DyArray.prototype[Symbol.iterator] = function* () {
   return {
     next() {
       let nextIndex = index++;
-      if (nextIndex < that.data.lenth) {
+      if (nextIndex < that.data.length) {
         return { value: that.data[nextIndex], done: false };
       } else {
         return { value: that.data[nextIndex], done: true };

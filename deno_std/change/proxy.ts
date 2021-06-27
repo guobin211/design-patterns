@@ -4,7 +4,7 @@ const data: any = {
 
 const proxyData = new Proxy(data, {
   defineProperty(
-    target: { name: string },
+    target: any,
     p: PropertyKey,
     attributes: PropertyDescriptor,
   ): boolean {
@@ -33,3 +33,5 @@ console.log(proxyData.hasOwnProperty("name"));
 Object.defineProperty(data, "age", { value: 22 });
 console.log(proxyData);
 console.log(data);
+
+export {}

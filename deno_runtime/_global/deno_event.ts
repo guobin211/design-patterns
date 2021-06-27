@@ -1,4 +1,4 @@
-class Person implements EventListenerObject {
+class ReactivePerson implements EventListenerObject {
   constructor(public name = "jack", public age = 22) {}
 
   handleEvent(evt: Event): void | Promise<void> {
@@ -9,7 +9,7 @@ class Person implements EventListenerObject {
   }
 }
 
-const jack = new Person();
+const jack = new ReactivePerson();
 
 addEventListener("click", (e) => jack.handleEvent(e));
 

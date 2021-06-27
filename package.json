@@ -2,7 +2,6 @@
   "name": "design-patterns",
   "version": "1.0.0",
   "description": "使用Deno理解设计模式",
-  "main": "index.js",
   "scripts": {
     "start": "deno run -A --importmap=import_map.json mod.ts",
     "format": "deno run -A --importmap=import_map.json format.ts"
@@ -16,6 +15,7 @@
   "bugs": {
     "url": "https://github.com/guobin211/design-patterns/issues"
   },
+  "type": "module",
   "homepage": "https://github.com/guobin211/design-patterns#readme",
   "devDependencies": {
     "typescript": "^4.2.4",

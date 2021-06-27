@@ -22,8 +22,3 @@ console.log(persons.length);
 const first = persons.shift();
 const end = persons.pop();
 console.log(first, end, persons);
-
-const str = "Hello Deno 2020";
-
-const arr = str.split(" ");
-console.log(arr);

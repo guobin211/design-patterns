@@ -1,9 +1,24 @@
 {
   "compilerOptions": {
-    "lib": ["ESNext", "DOM"],
+    "lib": [
+      "ESNext",
+      "DOM"
+    ],
     "noEmit": true,
     "rootDir": "./",
     "module": "ESNext",
-    "target": "ESNext"
-  }
+    "target": "ESNext",
+    "baseUrl": "./",
+    "rootDirs": ["./"]
+  },
+  "include": [
+    "deno_std/**/*",
+    "deno_runtime/**/*",
+    "data_structure/**/*",
+    "ast_explorer/**/*",
+    "design_patterns/**/*"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
 }

@@ -44,3 +44,5 @@ function makeReactive(component: HomePage) {
 const homePage = new HomePage();
 makeReactive(homePage);
 console.log(homePage);
+
+export {}
