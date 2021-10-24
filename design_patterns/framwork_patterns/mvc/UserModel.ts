@@ -10,4 +10,12 @@ export class UserModel {
   static from(name: string) {
     return new UserModel(name, parseInt(Math.random() * 10 + "3", 10));
   }
+
+  static async getModels() {
+    return [
+      UserModel.from("Jack"),
+      UserModel.from("Tom"),
+      UserModel.from("Mary"),
+    ]
+  }
 }

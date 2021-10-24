@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "experimentalDecorators": true,
     "lib": [
       "ESNext",
       "DOM"
@@ -9,7 +10,8 @@
     "module": "ESNext",
     "target": "ESNext",
     "baseUrl": "./",
-    "rootDirs": ["./"]
+    "rootDirs": ["./"],
+    "en": true
   },
   "include": [
     "deno_std/**/*",

@@ -9,16 +9,7 @@ import { UserModel } from "./UserModel.ts";
 
 export class UserController {
   async getUserList(): Promise<UserView[]> {
-    const models = [
-      UserModel.from("Jack"),
-      UserModel.from("Tom"),
-      UserModel.from("Mary"),
-    ];
-    const res: UserView[] = [];
-    for (const model of models) {
-      res.push(new UserView(model));
-    }
-    return Promise.resolve(res);
+    return UserModel.getModels().then(models => models.map(model => new UserView(model)));
   }
 
   async getUser() {
